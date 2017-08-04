@@ -5,7 +5,26 @@ import { Component } from '@angular/core';
   template: `
   	
       <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-      
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+     
+
+
+	      <style> 
+	      #special {
+	      	position: absolute;
+	      	z-index: 10;
+	      	top: 220px;
+			left: 100px;
+			width: 39.984375px;
+			height: 17px;
+			border: 1px solid blue;
+
+	      }
+	      </style>
+
+      <div id="special"> 
+
+      </div>
 
 	  <div>
 	      <label>PDF src</label>
@@ -27,7 +46,13 @@ import { Component } from '@angular/core';
 	  	//http://www.inion.ru/files/File/Ursul_A_D_Priroda_informacii.pdf
 	  	//https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf
 	  	//http://dev.exerica.com/ExericaFiles/58c30cff967a413208604b79/document.pdf
-	
+	 
+	 <script> 
+	  $("#second").css( "border", "2px solid red" )
+	 </script>	
+
+
+	 
 	  <pdf-viewer [src]="pdfSrc" 
 	              [zoom]="zoom"
 	              [page]="page" 
@@ -35,14 +60,17 @@ import { Component } from '@angular/core';
 	              [original-size]="true" 
 	              style="display: block;"
 	              [show-all]="false"
+	              [render-text]="true"	
 	  ></pdf-viewer>
+
+
 	  
   `
 })
 
 export class PDFComponent {
-  pdfSrc = 'https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf';
-  page: number = 1;
+  pdfSrc = 'http://dev.exerica.com/ExericaFiles/58c30cff967a413208604b79/document.pdf';
+  page: number = 4;
   zoom: number = 1;
   
 }
